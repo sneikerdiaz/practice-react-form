@@ -1,0 +1,259 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+:root {
+  --custom-background: linear-gradient(
+    90deg,
+    rgba(95, 91, 158, 1) 0%,
+    rgba(164, 81, 198, 1) 14%,
+    rgba(43, 80, 149, 1) 58%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  --container: rgba(1, 10, 62, 0.4);
+  --list-border: #16181a7a;
+  --list-background: #123e58;
+  --button-background: #0a215c;
+  --header-white: #dcdcdf;
+  --input-glow: #8d4784;
+  --button-hover: #3d1447;
+
+  --st-logo: url("https://upload.wikimedia.org/wikipedia/commons/2/22/StormtrooperHelmetIcon.svg");
+}
+
+/*FONTS*/
+@import url(https://fonts.googleapis.com/css?family=PT + Sans:400, 400italic);
+
+@import url(https://fonts.googleapis.com/css?family=Droid + Serif);
+
+html,
+body {
+  background: var(--custom-background);
+}
+
+body {
+  counter-reset: section;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  top: 100px;
+  border-radius: 10;
+  background-color: var(--container);
+  height: 320px;
+  padding: 5px;
+  margin: auto;
+}
+
+.container * {
+  margin: 4px 0px;
+}
+
+.container h1,
+.container span {
+  font-family: "Pt Sans", helvetica, sans-serif;
+}
+
+.container h1 {
+  text-align: center;
+  color: white;
+  font-weight: 100;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.container h2 {
+  font-family: "droid serif";
+  font-style: italic;
+  color: var(--header-white);
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.container form span:before,
+.container form span:after {
+  content: var(--st-logo);
+  border: 2px solid var(--list-border);
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 30%;
+  line-height: 1.6em;
+  font-size: 1.5em;
+  position: relative;
+  background: var(--list-background);
+}
+
+.container form span:before {
+  left: -22px;
+}
+
+.container form span:after {
+  left: 22px;
+}
+
+form {
+  margin-top: 25px;
+  display: inline-block;
+}
+
+.fields {
+  border-left: 1px solid var(--list-border);
+  border-right: 1px solid var(--list-border);
+}
+
+.fields > * {
+  margin: 0px;
+}
+
+.container span {
+  margin-bottom: 22px;
+  display: inline-block;
+}
+
+.container span:last-child {
+  margin-bottom: -11px;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  display: inline-block;
+  height: 34px;
+  vertical-align: middle;
+  position: relative;
+  bottom: 14px;
+  right: 9px;
+  border-radius: 22px;
+  width: 220px;
+  box-sizing: border-box;
+  padding: 0 18px;
+}
+
+button {
+  background: var(--button-background);
+  color: #fff;
+  position: relative;
+  left: 9px;
+  top: 25px;
+  width: 100px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea,
+select {
+  box-shadow: 0 0 5px var(--input-glow);
+  border: 1px solid var(--input-glow);
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 650px) {
+  .container {
+    margin: auto;
+    width: 450px;
+    padding: 4px;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    width: 320px;
+    padding: 8px 10px;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .container form span:before {
+    width: 35px;
+    height: 35px;
+    border-radius: 30%;
+    line-height: 1.6em;
+    font-size: 1.5em;
+    position: relative;
+    left: -20px;
+    background: var(--list-background);
+  }
+
+  .container form span:after {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .container form span:before,
+  .container form span:after {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    border-radius: 30%;
+    line-height: 1.6em;
+    font-size: 1.5em;
+    position: relative;
+    background: var(--list-background);
+  }
+
+  .container form span:before {
+    left: -20px;
+  }
+
+  .container form span:after {
+    left: 20px;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .fields {
+    border-left: 1px solid var(--list-border);
+    border-right: 0px;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .fields {
+    border-left: 1px solid var(--list-border);
+    border-right: 1px solid var(--list-border);
+  }
+}
+
+@media screen and (min-width: 650px) {
+  input {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  input {
+    width: 200px;
+  }
+}
